@@ -1,9 +1,10 @@
 import Palette from "./Palette";
+import seedColor from "./seedColor";
 
 function App() {
   return (
     <div className="App">
-      <Palette />
+      <Palette {...seedColor[4]} />
     </div>
   );
 }
