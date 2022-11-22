@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ColorBox from "./ColorBox";
-import "./Palette.css";
 import Slider, { range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
+import "./Palette.css";
 
 class Palette extends Component {
   constructor(props) {
@@ -22,13 +22,29 @@ class Palette extends Component {
     ));
     return (
       <div className="Palette">
-        <Slider
-          defaultValue={levels}
-          min={100}
-          max={900}
-          step={100}
-          onAfterChange={this.changeLevels}
-        />
+        <div className="slider">
+          <Slider
+            defaultValue={levels}
+            min={100}
+            max={900}
+            step={100}
+            onAfterChange={this.changeLevels}
+            trackStyle={[{ backgroundColor: "transparent" }]}
+            handleStyle={[
+              {
+                backgroundColor: "green",
+                outline: "none",
+                border: "2px solid green",
+                boxShadow: "none",
+                width: "13px",
+                height: "13px",
+                marginLeft: "-7px",
+                marginTop: "-3px",
+              },
+            ]}
+            railStyle={{ height: "8px" }}
+          />
+        </div>
         <div className="Palette-colors">{colorBoxes}</div>
       </div>
     );
