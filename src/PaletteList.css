@@ -1,0 +1,27 @@
+.paletteList-root {
+  background-color: rgb(158, 158, 225);
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.paletteList-container {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.paletteList-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: white;
+}
+.paletteList-palettes {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  gap: 5%;
+}

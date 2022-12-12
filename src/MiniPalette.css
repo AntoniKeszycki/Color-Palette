@@ -9,8 +9,7 @@
 .root:hover {
   cursor: pointer;
 }
-.colors {
-}
+
 .title {
   display: flex;
   justify-content: space-between;
