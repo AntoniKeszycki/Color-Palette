@@ -1,6 +1,6 @@
-import { palette } from "@mui/system";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MiniPalette from "./MiniPalette";
 
 class PaletteList extends Component {
   render() {
@@ -8,10 +8,11 @@ class PaletteList extends Component {
     return (
       <div>
         <h1> React Colors</h1>
+        <MiniPalette />
         {palettes.map((palette) => (
-          <p>
-            <Link to={`/palette/${palette.id}`}>{palette.paletteName}</Link>
-          </p>
+          <div>
+            <MiniPalette {...palette} />
+          </div>
         ))}
       </div>
     );
@@ -19,3 +20,5 @@ class PaletteList extends Component {
 }
 
 export default PaletteList;
+
+/* <Link to={`/palette/${palette.id}`}>{palette.paletteName}</Link> */
