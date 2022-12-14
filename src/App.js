@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, Link } from "react-router-dom";
 import Palette from "./Palette";
 import PaletteList from "./PaletteList";
 import seedColor from "./seedColor";
 import { generatePalette } from "./colorHelpers";
-import { SpeedSharp } from "@mui/icons-material";
-import { selectClasses } from "@mui/material";
 
 const findPalette = (id) => seedColor.find((palette) => palette.id == id);
 const PaletteWrapper = () => {
@@ -22,6 +20,7 @@ class App extends Component {
       <Routes>
         <Route path="/" element={<PaletteListWrapper />} />
         <Route path="/palette/:id" element={<PaletteWrapper />} />
+        <Route path="/palette/:paletteId/:colorId" element={<h1>Hello</h1>} />
       </Routes>
       /*  
       <div className="App">
