@@ -4,6 +4,9 @@ import MiniPalette from "./MiniPalette";
 import "./PaletteList.css";
 
 class PaletteList extends Component {
+  goToPalette(id) {
+    this.props.history.push(`/palette/${id}`);
+  }
   render() {
     const { palettes } = this.props;
     return (
@@ -14,7 +17,10 @@ class PaletteList extends Component {
           </nav>
           <div className="paletteList-palettes">
             {palettes.map((palette) => (
-              <MiniPalette {...palette} />
+              <MiniPalette
+                {...palette}
+                handleClick={() => this.goToPalette(palette.id)}
+              />
             ))}
           </div>
         </div>
